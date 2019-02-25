@@ -1,7 +1,7 @@
 # meuFilmeIBMTest
 
 
-Projeto funcional com Android e Web e Firebase e Firestore
+Projeto funcional IONIC 4 com Android e Web e Firebase e Firestore
 
 o link web é https://d1zy455etrfewe.cloudfront.net/movies
 
