@@ -1,0 +1,53 @@
+<ion-app>
+
+  <ion-split-pane>
+    
+    <ion-menu type="overlay" auto-hide="false">
+      <ion-header color= "ion-color-primary-tint">
+        <ion-toolbar>
+          <h5 *ngIf="afAuth.auth.currentUser">Wellcome {{afAuth.auth.currentUser.displayName}}</h5>
+        </ion-toolbar>
+      </ion-header>
+      
+          <ion-content >
+              <ion-list color = "ion-color-medium"   class="colorlistmenu">
+                <ion-item color = "dark" >    <firebase-ui ></firebase-ui></ion-item>
+                <ion-item color = "dark" >
+                    <ion-button *ngIf="afAuth.auth.currentUser" (click)="signOut()">
+                      Sing Out
+                    </ion-button>
+                </ion-item>
+
+                <ion-item color = "dark" >
+                    <ion-button *ngIf="afAuth.auth.currentUser"  [routerLink]="['/','movies']" >
+                      Home
+                    </ion-button>
+                </ion-item>
+
+                <ion-item color = "dark" >
+                    <ion-button *ngIf="afAuth.auth.currentUser"  [routerLink]="['/','favorite']" >
+                      My favorite film
+                    </ion-button>
+                </ion-item>
+
+
+                <ion-item color = "dark" > 
+                    <ion-button class="myButton" color="primary-tint" *ngIf="afAuth.auth.currentUser"  [routerLink]="['/','popularfilm']" >Films mais populares</ion-button>
+                </ion-item>
+
+
+                <ion-item color = "dark"  *ngFor="let mygenre of genrelist" >
+                  <ion-button class="myButton" color="dark" expand = "block"  *ngIf="afAuth.auth.currentUser"  [routerLink]="['/','genre',mygenre.id, mygenre.name]" > {{mygenre.name}}</ion-button>
+                  <!--[routerLink]="['/','movies',mypopular.title]"-->          
+                </ion-item>
+
+              </ion-list>
+            </ion-content>     
+    </ion-menu>
+
+
+    <ion-router-outlet main></ion-router-outlet>
+
+  </ion-split-pane>
+
+</ion-app>

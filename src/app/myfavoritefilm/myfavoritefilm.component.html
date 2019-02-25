@@ -1,0 +1,42 @@
+
+  
+  <ion-content color = "dark">
+  
+  
+  <ion-item-group>
+      <ion-header>
+          <ion-toolbar color ="primary">
+            <ion-buttons slot="start">
+              <ion-menu-button>
+        
+              </ion-menu-button>
+            </ion-buttons>
+            <ion-title>meus filmes favoritos</ion-title>  
+          </ion-toolbar>
+        </ion-header>
+
+      <ion-grid>
+          <ion-row  color = "dark" >
+            <ion-col size="40"  *ngFor="let myfilm of favoriteList | async" >
+                <ion-card  button [routerLink]="['/','movies',myfilm.code]" >
+                    <ion-item color = "dark" >
+                        <ion-img [src]="myfilm.poster" *ngIf = "myfilm.poster !='N/A'"  slot="start" class="info-img"></ion-img>
+                    </ion-item>
+                  
+                    <ion-card-content>
+                            <ion-toolbar  color = "dark">
+                                <h2>{{myfilm.name}}</h2>
+                                <h4>{{myfilm.year}}</h4>                         
+                            </ion-toolbar>
+                    </ion-card-content>
+                  </ion-card>
+                           
+            </ion-col>
+           
+          </ion-row>
+  
+        </ion-grid>
+  
+  </ion-item-group>
+
+  </ion-content>

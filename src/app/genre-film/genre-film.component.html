@@ -1,0 +1,44 @@
+
+
+<ion-header>
+    <ion-toolbar color ="primary">
+      <ion-buttons slot="start">
+        <ion-menu-button>
+  
+        </ion-menu-button>
+      </ion-buttons>
+      <ion-title>{{titulo}}</ion-title>  
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content >
+
+<ion-list color = "ion-color-medium" class="colorlist" >
+
+<!--
+    <ion-item padding *ngFor="let mygenremovie of genreList"   [routerLink]="['/','movies',mygenremovie.title]" color = "dark">
+          <ion-img slot="start" src="http://image.tmdb.org/t/p/w185{{mygenremovie.poster_path}}"></ion-img>
+          
+      <ion-label  text-wrap slot="start">
+        <h2>{{mygenremovie.title}}</h2>
+        <h5> </h5>
+      </ion-label>
+    </ion-item>
+-->
+
+
+<ion-card *ngFor="let mygenremovie of genreList"   [routerLink]="['/','movies',mygenremovie.title]" color = "dark">
+    <ion-card-header>
+        <ion-card-title>{{mygenremovie.title}}</ion-card-title>
+        <ion-card-subtitle>year:{{mygenremovie.release_date}}</ion-card-subtitle>   
+    </ion-card-header>
+  
+    <ion-card-content>
+        <ion-img slot="start" padding src="http://image.tmdb.org/t/p/w185{{mygenremovie.poster_path}}"></ion-img>
+        <h5>{{mygenremovie.overview}}</h5>
+    </ion-card-content>
+  </ion-card>
+  
+
+</ion-list>
+</ion-content>

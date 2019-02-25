@@ -1,0 +1,35 @@
+
+
+.info-img{
+    max-height: 100vh;
+    max-width:  100vh;
+    object-fit: contain;
+  //  padding: 10px;
+ //   margin: 15px;  
+   // margin-right: 20px;
+    vertical-align: middle;  
+
+   
+}
+
+ion-card{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.mybackground{
+    background-color: #222428;
+
+}
+
+ion-tabs {
+    --color-selected: red;
+  }
+
+
+.item-native{
+    background-color: #222428 !important;
+
+}
